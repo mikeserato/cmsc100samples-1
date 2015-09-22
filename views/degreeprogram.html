@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Galadhrim </title>
+		<meta charset="utf-8"/>
+	</head>
+	
+	<body>
+		<header> <h1> galadhrim.api</h1> </header>
+		
+		<h3> Data Management </h3>
+		<a href="college.html"> College </a>
+		<br/>
+		<a href="degreeprogram.html"> Degree Program </a>
+		<br/>
+		<a href="curriculum.html"> Curriculum </a>
+		<br/>
+		<a href="student.html"> Student </a>
+		
+		<h3> Degree Program </h3>
+		<p> My degree program is Computer Science.</p>
+		
+		<h2> REST API </h2>
+		<h3> Create degree program </h3>
+		
+		POST <br/> /api/degreeprograms <br/>
+		@param code <br/> @param name
+		
+		<h3> Example Request </h3>
+		curl <br/> http://ws.c/api/degree-programs
+		
+		<h3> Example Response </h3>
+		{ <br/> "_id": 1 <br/> "code":"CA", <br/> "name:""College of Arts" <br/> }
+	</body>
+</html>
