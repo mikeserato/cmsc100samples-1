@@ -22,19 +22,20 @@
 			}
 			
 			function guessNumber(){
-				var x = prompt("Enter a number");
-				try{
-					if(x=="") throw "empty";
-					if(isNaN(x)) throw "not a number";
-					x = Number(x);
-					if(x<5) throw "too low";
-					if(x>10) throw "too high";
-				}
-				catch(err){
-					alert("Input is " + err);
-				}
-				finally{
-					alert("Gwapo si Mike");
+				var y = Math.floor((Math.random() * 100) + 1);
+				while(x!=y){
+					var x = prompt("Enter a number from 1 to 100");
+					try{
+						if(x=="") throw "Input is empty.";
+						if(isNaN(x)) throw "Input is not a number.";
+						x = Number(x);
+						if(x==y) throw "You guessed it correctly!";
+						if(x<y) throw "Input a higher number!";
+						if(x>y) throw "Input a lower number!";
+					}
+					catch(err){
+						alert(err);
+					}
 				}
 			}
 		</script>
