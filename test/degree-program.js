@@ -76,9 +76,11 @@ describe('Degree Program', function () {
 	
 	// Test update web service
 	describe('update()', function () {
-		it('should update a specific degree program record: total_units field only', function () {
+		it('should update a specific degree program record:', function () {
 			var update = {
 				'units': 150
+				'code': 150
+				'name': 150
 			};
 			server
 				.put('/degree-programs/'+insertedId)
@@ -90,7 +92,8 @@ describe('Degree Program', function () {
 					else{
 						res.should.have.status(200);
 						res.body.should.have.property('total_units',150);
-						res.body.should.have.property('degree_code','BSCS');
+						res.body.should.have.property('degree_code',150);
+						res.body.should.have.property('description',150);
 						done();
 					}
 				})

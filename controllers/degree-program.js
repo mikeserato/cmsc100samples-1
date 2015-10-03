@@ -40,7 +40,7 @@ exports.remove = function (req, res, next) {
 
 // Update a degree program.
 exports.update = function (req, res, next) {
-	db.query("UPDATE degree SET total_units='"+req.body.units+"' WHERE degree_id='"+req.params.id+"'", function (err, rows) {
+	db.query("UPDATE degree(total_units,degree_code,description) VALUES (?,?,?) WHERE degree_id='"+req.params.id+"'", [req.body.units,req.body.code,req.body.name], function (err, rows) {
 		if(err) return(err);
 		if(rows.length === 0)
 			res.send(404, {message: 'Degree program not found.'});
