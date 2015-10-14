@@ -57,12 +57,12 @@ $(document).ready(function(){
 		});
 	});
 	
-	 $("A[href='#reverse_select']").click( function() {
-    	$("#" + $(this).attr('rel') + " INPUT[type='checkbox']").each( function() {
-		  if ($(this).is(':checked')){
+	$("#reverse_select").click(function(){	//goes here if the button is clicked
+    	$(':checkbox').each(function() {	//checks each checkbox
+		  if($(this).is(':checked')){		//checks if the checkbox is checked
 			  $(this).prop('checked', false);
 		  }
-		  else{
+		  else{								//goes here if the checkbox is not checked
 			 $(this).prop('checked', true);
 		  }
       });
